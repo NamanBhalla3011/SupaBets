@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="stylesheet/style.css" />
+    <style>
+      .content .contact-support {
+        background: #19406d;
+      }
+      .content .contact-support:hover {
+        background: #225895;
+      }
+      .content .makePayment .voucher .download-btn {
+        margin: 10px;
+      }
+      @media screen and (max-width: 452px) {
+        .content .makePayment .voucher .download-btn {
+          margin-left: 0;
+          margin-bottom: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="web-container">
+      <!-- Navigation -->
+      <div class="web-navbar">
+        <a href="index.html" class="">
+          <i
+            class="fa-solid fa-building-columns"
+            style="font-size: 16px; margin-right: 16px"
+          ></i>
+          Deposit</a
+        >
+        <a href="withdraw.html" class=""
+          ><i
+            class="fa-solid fa-building-columns"
+            style="font-size: 16px; margin-right: 16px"
+          ></i>
+          Withdraw</a
+        >
+        <div id="dropdown-div" style="border-radius: 5px">
+          <button class="dropdown-btn">
+            <i
+              class="fa-solid fa-clock-rotate-left"
+              style="font-size: 16px; margin-right: 16px"
+            ></i>
+            History
+            <i class="fa-solid fa-chevron-down" id="icon-change"></i>
+          </button>
+          <div class="dropdown-container">
+            <a href="depositHistory.html">Deposit</a>
+            <a href="withdrawHistory.html" class="active"> Withdraw</a>
+          </div>
+        </div>
+        <a href="#" class=""
+          ><i
+            class="fa-solid fa-building-columns"
+            style="font-size: 16px; margin-right: 16px"
+          ></i>
+          My Bank Account</a
+        >
+      </div>
+      <!-- Content -->
+      <div class="content">
+        <h2 style="margin-top: 10px">Withdrawal History</h2>
+        <div class="makePayment">
+          <div class="voucher">
+            <p style="margin: 0">Transaction reference</p>
+            <input type="text" /><br />
+            <button>VIEW REPORT</button>
+            <button class="download-btn">DOWNLOAD PDF</button>
+            <button class="contact-support">CONTACT SUPPORT</button>
+          </div>
+          <div class="banks">
+            <p>
+              Total Deposit Amount : <span style="color: #19406d"> R1234</span>
+            </p>
+            <table style="border-spacing: 0px" class="history-table">
+              <tr>
+                <th>Date | Time</th>
+                <th>Transaction Reference</th>
+                <th>Payment Method</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+              <tr>
+                <td>12 March 2024 | 12:00PM</td>
+                <td>1234567890</td>
+                <td>voucher</td>
+                <td>R10000</td>
+                <td>Successful</td>
+              </tr>
+              <tr>
+                <td>12 March 2024 | 12:00PM</td>
+                <td>1234567890</td>
+                <td>Direct Deposit</td>
+                <td>R10000</td>
+                <td><a href="#">Unsuccessful</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let dropdown = document.getElementsByClassName("dropdown-btn");
+      let dropdownDiv = document.getElementById("dropdown-div");
+      let i;
+      let iconChange = document.getElementById("icon-change");
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          let dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "flex") {
+            dropdownContent.style.display = "none";
+            iconChange.classList.remove("fa-chevron-up");
+            iconChange.classList.add("fa-chevron-down");
+            dropdownDiv.style.backgroundColor = "#f4f6fe";
+          } else {
+            dropdownContent.style.display = "flex";
+            iconChange.classList.remove("fa-chevron-down");
+            iconChange.classList.add("fa-chevron-up");
+            dropdownDiv.style.backgroundColor = "#c7ccdf";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

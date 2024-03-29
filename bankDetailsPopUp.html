@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request Withdraw</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        font-family: "poppins";
+      }
+      input::-webkit-outer-spin-button,
+       input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .popup-container {
+        border: 2px solid #aaa;
+        background-color: white;
+        border-radius: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-height: 300px;
+        max-width: 800px;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .popup-container h4 {
+        font-weight: 600;
+      }
+      .popup-container input,
+      .popup-container select {
+        width: 300px;
+        height: 35px;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: 10px 0;
+        font-size: 16px;
+      }
+      .popup-container i {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 25px;
+      }
+      .popup-container p {
+        text-align: center;
+        padding: 20px 20px;
+      }
+      .popup-container button {
+        outline: none;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out 0s;
+        font-family: "poppins";
+        font-weight: 600;
+        border-radius: 5px;
+        background: #0ba3f7;
+        border: 1px solid transparent;
+        color: #fff;
+        display: inline-block;
+        font-size: 16px;
+        padding: 0px 25px;
+        height: 40px;
+        line-height: 40px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup-container">
+      <i class="fa-solid fa-xmark"></i>
+      <img src="images/Flash.png" alt="" />
+      <p>
+        The withdrawal amount is R0 and will be processed upon validation of
+        your FICA documents Please provide your banking details
+      </p>
+      <h4>Accountholder Name</h4>
+      <input type="text" name="" id="" />
+      <h4>Bank account number</h4>
+      <input type="number" name="" id="" />
+      <!-- SELECT BANK -->
+      <select>
+        <option value="" disabled selected>Select your bank</option>
+        <option value="absa">ABSA</option>
+        <option value="access_bank">Access Bank</option>
+        <option value="african_bank">African Bank</option>
+        <option value="capitec">Capitec</option>
+        <option value="discovery_bank">Discovery Bank</option>
+        <option value="first_bank_of_nigeria">First Bank Of Nigeria</option>
+        <option value="fnb">FNB</option>
+        <option value="grindrod_bank">Grindrod Bank</option>
+        <option value="gtbank">GTBank</option>
+        <option value="gtbank_mobile">GTBank Mobile</option>
+        <option value="investec">Investec</option>
+        <option value="nedbank">Nedbank</option>
+        <option value="providus_bank">Providus Bank</option>
+        <option value="sasfin_bank">Sasfin Bank</option>
+        <option value="standard_bank">Standard Bank</option>
+        <option value="sterling_bank">Sterling Bank</option>
+        <option value="tymebank">Tyme Bank</option>
+        <option value="united_bank_for_africa">United Bank For Africa</option>
+        <option value="vfd_microfinance_bank">VFD MicroFinance Bank</option>
+        <option value="wema_bank">Wema Bank</option>
+        <option value="za_access_bank">ZA Access Bank</option>
+        <option value="za_albaraka_bank">ZA Albaraka Bank</option>
+        <option value="za_bank_windhoek">ZA Bank Windhoek</option>
+        <option value="za_bank_zero">ZA Bank Zero</option>
+        <option value="za_bidvest">ZA Bidvest</option>
+        <option value="za_bnp_paribas">ZA BNP Paribas</option>
+        <option value="za_capitec_business">ZA Capitec Business</option>
+        <option value="za_citibank">ZA Citibank</option>
+        <option value="za_finbond_mutual_bank">ZA Finbond Mutual Bank</option>
+        <option value="za_finbond_net1">ZA Finbond Net1</option>
+        <option value="za_habib_overseas_bank">ZA Habib Overseas Bank</option>
+        <option value="za_hbz_bank">ZA HBZ Bank</option>
+        <option value="za_hsbc">ZA HSBC</option>
+        <option value="za_ithala_bank">ZA Ithala Bank</option>
+        <option value="za_jp_morgan_chase_bank">ZA JP Morgan Chase Bank</option>
+        <option value="za_mercantile_bank">ZA Mercantile Bank</option>
+        <option value="za_nedbank_namibia">ZA Nedbank Namibia</option>
+        <option value="za_olympus_mobile">ZA Olympus Mobile</option>
+        <option value="za_people_bank">ZA People Bank</option>
+        <option value="za_postbank">ZA Postbank</option>
+        <option value="za_standard_chartered_bank">
+          ZA Standard Chartered Bank
+        </option>
+        <option value="za_state_bank_of_india">ZA State Bank of India</option>
+        <option value="za_u_bank">ZA U Bank</option>
+        <option value="za_unibank">ZA Unibank</option>
+        <option value="za_vbs_mutual_bank">ZA VBS Mutual Bank</option>
+        <option value="zenith_bank">Zenith Bank</option>
+      </select>
+      <!-- SELECT ACCOUNT TYPE -->
+      <select>
+        <option value="" disabled selected>Select your account type</option>
+        <option value="current">Current</option>
+        <option value="savings">Savings</option>
+        <option value="credit">Credit</option>
+        <option value="loan">Loan</option>
+        <option value="investment">Investment</option>
+        <option value="other">Other</option>
+        <option value="unknown">Unknown</option>
+      </select>
+      <button>SUBMIT BANK DETAILS</button>
+    </div>
+  </body>
+</html>

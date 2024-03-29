@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deposit History</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="stylesheet/style.css" />
+    <style>
+      .content .methods {
+        padding: 0px;
+        border: none;
+      }
+      .content .makePayment {
+        text-align: center;
+      }
+      .content .contact-support {
+        background: #19406d;
+        margin-left: 10px;
+      }
+      .content .contact-support:hover {
+        background: #225895;
+      }
+
+      @media screen and (max-width: 451px){
+      
+      .content .contact-support {
+        background: #19406d;
+        margin-left: 0px;
+      }
+      .content .contact-support:hover {
+        background: #225895;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="web-container">
+      <!-- Navigation -->
+      <div class="web-navbar">
+        <a href="index.html" class="">
+          <i
+            class="fa-solid fa-building-columns"
+            style="font-size: 16px; margin-right: 16px"
+          ></i>
+          Deposit</a
+        >
+        <a href="withdraw.html" class=""
+          ><i
+            class="fa-solid fa-building-columns"
+            style="font-size: 16px; margin-right: 16px"
+          ></i>
+          Withdraw</a
+        >
+        <div id="dropdown-div" style="border-radius: 5px">
+          <button class="dropdown-btn">
+            <i
+              class="fa-solid fa-clock-rotate-left"
+              style="font-size: 16px; margin-right: 16px"
+            ></i>
+            History
+            <i class="fa-solid fa-chevron-down" id="icon-change"></i>
+          </button>
+          <div class="dropdown-container">
+            <a href="depositHistory.html" class="active">Deposit</a>
+            <a href="withdrawHistory.html">Withdraw</a>
+          </div>
+        </div>
+        <a href="#" class=""
+          ><i
+            class="fa-solid fa-building-columns"
+            style="font-size: 16px; margin-right: 16px"
+          ></i>
+          My Bank Account</a
+        >
+      </div>
+      <!-- Content -->
+      <div class="content">
+        <h2 style="margin-top: 10px">Deposit History</h2>
+        <div class="methods">
+          <img
+            src="images/Historyerror.png"
+            alt=""
+            width="100%"
+            style="border-radius: 5px"
+          />
+        </div>
+
+        <div class="makePayment">
+          <img src="images/exclamation.png" alt="" height="45px" />
+          <div class="voucher">
+            <p style="font-size: 15px;">Data not found</p>
+            
+            <button>TRY AGAIN</button>
+            <button class="contact-support">CONTACT SUPPORT</button>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    <script>
+      let dropdown = document.getElementsByClassName("dropdown-btn");
+      let dropdownDiv = document.getElementById("dropdown-div");
+      let i;
+      let iconChange = document.getElementById("icon-change");
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          let dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "flex") {
+            dropdownContent.style.display = "none";
+            iconChange.classList.remove("fa-chevron-up");
+            iconChange.classList.add("fa-chevron-down");
+            dropdownDiv.style.backgroundColor = "#f4f6fe";
+          } else {
+            dropdownContent.style.display = "flex";
+            iconChange.classList.remove("fa-chevron-down");
+            iconChange.classList.add("fa-chevron-up");
+            dropdownDiv.style.backgroundColor = "#c7ccdf";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
