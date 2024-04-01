@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <style>
+      .submit-btn {
+        outline: none;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out 0s;
+        font-family: "poppins";
+        font-weight: 600;
+        border-radius: 5px;
+        background: #0ba3f7;
+        border: 1px solid transparent;
+        color: #fff;
+        display: inline-block;
+        font-size: 16px;
+        padding: 0px 25px;
+        height: 40px;
+        line-height: 40px;
+        margin-top: 20px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="stylesheet/style.css" />
+  </head>
+  <body>
+    <div class="web-container">
+      <!-- Navigation -->
+      <div class="web-navbar">
+        <a href="index.html" class="">
+          <i
+            class="fa-solid fa-building-columns"
+            style="font-size: 16px; margin-right: 16px"
+          ></i>
+          Deposit</a
+        >
+        <a href="withdraw.html" class=""
+          ><i
+            class="fa-solid fa-building-columns"
+            style="font-size: 16px; margin-right: 16px"
+          ></i>
+          Withdraw</a
+        >
+        <div id="dropdown-div" style="border-radius: 5px">
+          <button class="dropdown-btn">
+            <i
+              class="fa-solid fa-clock-rotate-left"
+              style="font-size: 16px; margin-right: 16px"
+            ></i>
+            History
+            <i class="fa-solid fa-chevron-down" id="icon-change"></i>
+          </button>
+          <div class="dropdown-container">
+            <a href="depositHistory.html">Deposit</a>
+            <a href="withdrawHistory.html">Withdraw</a>
+          </div>
+        </div>
+        <a href="myBankAccount.html" class="active"
+          ><i
+            class="fa-solid fa-building-columns"
+            style="font-size: 16px; margin-right: 16px"
+          ></i>
+          My Bank Account</a
+        >
+      </div>
+
+      <!-- Content -->
+      <div class="content" style="padding: 0 20px">
+        <h2 style="margin-top: 10px">Banking</h2>
+        <div class="methods" style="border: none; margin: 0; padding: 5px 0">
+          <div
+            class="bankRow"
+            style="
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+            "
+          >
+            <div class="bankCol" style="display: flex; flex-direction: column">
+              <label style="font-weight: 500">Holder</label>
+              <input
+                required
+                type="text"
+                style="
+                  height: 42px;
+                  width: 280px;
+                  padding: 0 10px;
+                  font-size: 14px;
+                "
+              />
+            </div>
+            <div class="bankCol" style="display: flex; flex-direction: column">
+              <label style="font-weight: 500">Account Number</label>
+              <input
+                type="text"
+                style="
+                  height: 42px;
+                  width: 280px;
+                  padding: 0 10px;
+                  font-size: 14px;
+                "
+              />
+            </div>
+            <div class="bankCol" style="display: flex; flex-direction: column">
+              <label style="font-weight: 500">Bank</label>
+              <!-- SELECT BANK -->
+              <select
+                style="
+                  height: 42px;
+                  width: 280px;
+                  padding: 0 10px;
+                  font-size: 14px;
+                "
+              >
+                <option value="1" label="FNB/RMB - 250655">
+                  FNB/RMB - 250655
+                </option>
+                <option value="2" label="ABSA BANK - 632005">
+                  ABSA BANK - 632005
+                </option>
+                <option value="169" label="FINBOND MUTUAL BANK - 589000">
+                  FINBOND MUTUAL BANK - 589000
+                </option>
+                <option value="3" label="CAPITEC BANK - 470010">
+                  CAPITEC BANK - 470010
+                </option>
+                <option value="4" label="STANDARD BANK - 51001">
+                  STANDARD BANK - 51001
+                </option>
+                <option value="5" label="NEDBANK - 101239">
+                  NEDBANK - 101239
+                </option>
+                <option
+                  value="131"
+                  label="Central Africa Building Society (CABS) - 999999"
+                >
+                  Central Africa Building Society (CABS) - 999999
+                </option>
+                <option value="129" label="FNB LESOTHO - 280061">
+                  FNB LESOTHO - 280061
+                </option>
+                <option value="135" label="Grindrod Bank Limited - 223626">
+                  Grindrod Bank Limited - 223626
+                </option>
+                <option value="132" label="Zambia Absa Bank - 20017">
+                  Zambia Absa Bank - 20017
+                </option>
+                <option value="15" label="FNB NAMIBIA - 282672">
+                  FNB NAMIBIA - 282672
+                </option>
+                <option value="17" label="FNB SWAZILAND - 282364">
+                  FNB SWAZILAND - 282364
+                </option>
+                <option value="207" label="Nedbank Lesotho - 390161">
+                  Nedbank Lesotho - 390161
+                </option>
+                <option value="11" label="BIDVEST - 462005">
+                  BIDVEST - 462005
+                </option>
+                <option value="9" label="FNB - 250655">FNB - 250655</option>
+                <option value="21" label="SASFIN BANK - 683000">
+                  SASFIN BANK - 683000
+                </option>
+                <option value="96" label="African Bank - 430000">
+                  African Bank - 430000
+                </option>
+                <option value="95" label="Discovery Bank - 679000">
+                  Discovery Bank - 679000
+                </option>
+                <option value="203" label="BANK ZERO MUTUAL BANK - 888000">
+                  BANK ZERO MUTUAL BANK - 888000
+                </option>
+                <option value="7" label="INVESTEC - 580105">
+                  INVESTEC - 580105
+                </option>
+                <option value="10" label="MERCANTILE BANKI LIMITED - 450205">
+                  MERCANTILE BANKI LIMITED - 450205
+                </option>
+                <option value="16" label="SA POST BANK (POST OFFICE) - 460005">
+                  SA POST BANK (POST OFFICE) - 460005
+                </option>
+                <option value="170" label="UBANK - 431010">
+                  UBANK - 431010
+                </option>
+                <option value="204" label="IMB - 410105">IMB - 410105</option>
+                <option value="205" label="FINBOND MUTUAL BANK - 589000">
+                  FINBOND MUTUAL BANK - 589000
+                </option>
+                <option value="206" label="ITHALA - 754126">
+                  ITHALA - 754126
+                </option>
+                <option value="19" label="BARCLAYS BANK BOTSWANA - 293567">
+                  BARCLAYS BANK BOTSWANA - 293567
+                </option>
+                <option
+                  value="13"
+                  label="STANDARD CHARTERED BANK BOTSWANA - 662167"
+                >
+                  STANDARD CHARTERED BANK BOTSWANA - 662167
+                </option>
+                <option
+                  value="14"
+                  label="STANDARD CHARTERED BANK ZIMBABWE - 5132"
+                >
+                  STANDARD CHARTERED BANK ZIMBABWE - 5132
+                </option>
+                <option value="18" label="STANDARD BANK NAMIBIA - 87373">
+                  STANDARD BANK NAMIBIA - 87373
+                </option>
+                <option value="93" label="Tyme Bank - 678910">
+                  Tyme Bank - 678910
+                </option>
+                <option
+                  value="20"
+                  label="BANK OF ATHENS (GROBANK) Mukuru Access Bank - 410506"
+                >
+                  BANK OF ATHENS (GROBANK) Mukuru Access Bank - 410506
+                </option>
+                <option value="130" label="STANDARD BANK SWAZILAND - 660964">
+                  STANDARD BANK SWAZILAND - 660964
+                </option>
+                <option value="12" label="BANK OF WINDHOEK - 482372">
+                  BANK OF WINDHOEK - 482372
+                </option>
+                <option value="22" label="STEWARD BANK ZIMBABWE - 20301">
+                  STEWARD BANK ZIMBABWE - 20301
+                </option>
+                <option value="94" label="NAMIBIA NEDBANK - 461052">
+                  NAMIBIA NEDBANK - 461052
+                </option>
+                <option value="133" label="NMB Bank Limited (Zim) - 11110">
+                  NMB Bank Limited (Zim) - 11110
+                </option>
+                <option
+                  value="134"
+                  label="Atlas Mara Limited (Zambia) - 111111"
+                >
+                  Atlas Mara Limited (Zambia) - 111111
+                </option>
+                <option value="168" label="NEDBANK SWAZILAND LIMITED. - 360164">
+                  NEDBANK SWAZILAND LIMITED. - 360164
+                </option>
+                <option value="23" label="BARCLAYS BANK ZAMBIA - 20017">
+                  BARCLAYS BANK ZAMBIA - 20017
+                </option>
+                <option value="24" label="STANBIC BANK GHANA LIMITED - 0">
+                  STANBIC BANK GHANA LIMITED - 0
+                </option>
+                <option
+                  value="25"
+                  label="BARCLAYS BANK OF ZIMBABWE LIMITED - 2157"
+                >
+                  BARCLAYS BANK OF ZIMBABWE LIMITED - 2157
+                </option>
+                <option value="58" label="FNB ZAMBIA - 260001">
+                  FNB ZAMBIA - 260001
+                </option>
+                <option value="59" label="STANBIC BANK BOTSWANA - 604">
+                  STANBIC BANK BOTSWANA - 604
+                </option>
+                <option value="92" label="Botswana FNB - 284567">
+                  Botswana FNB - 284567
+                </option>
+              </select>
+            </div>
+            <div
+              class="bankCol"
+              style="display: flex; flex-direction: column; margin-top: 10px"
+            >
+              <label style="font-weight: 500">Account Type</label>
+              <!-- SELECT BANK -->
+              <select
+                style="
+                  height: 42px;
+                  width: 280px;
+                  padding: 0 10px;
+                  font-size: 14px;
+                "
+              >
+                <option value="1">Current (cheque/bond) account</option>
+                <option value="3">Savings account</option>
+              </select>
+            </div>
+          </div>
+          <button class="submit-btn">SUBMIT</button>
+        </div>
+
+        <div class="makePayment">
+          <h3 style="margin-bottom: 0px">Bank Accounts</h3>
+
+          <div class="banks">
+            <table style="border-spacing: 0px" class="history-table">
+              <tr>
+                <th>Primary Account</th>
+                <th>Holder Name</th>
+                <th>Account Number</th>
+                <th>Bank</th>
+                <th>Account Type</th>
+                <th>Action</th>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="radio"
+                    id="primary"
+                    name="PrimaryBank"
+                    checked
+                    style="
+                      height: 12px;
+                      width: 12px;
+                      padding: 0;
+                      margin: 0;
+                      appearance: auto;
+                    "
+                  />
+                </td>
+                <td>XYZ</td>
+                <td>1234567890</td>
+                <td>FNB-111</td>
+                <td>Saving</td>
+                <td><a href="">Delete</a></td>
+              </tr>
+              <tr>
+                <td><input
+                    type="radio"
+                    id="primary"
+                    name="PrimaryBank"
+                    style="
+                      height: 12px;
+                      width: 12px;
+                      padding: 0;
+                      margin: 0;
+                      appearance: auto;
+                    "
+                  /></td>
+                <td>XYZ</td>
+                <td>1234567890</td>
+                <td>FNB-111</td>
+                <td>Saving</td>
+                <td>
+                  <a href="">Delete</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let dropdown = document.getElementsByClassName("dropdown-btn");
+      let dropdownDiv = document.getElementById("dropdown-div");
+      let i;
+      let iconChange = document.getElementById("icon-change");
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          let dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "flex") {
+            dropdownContent.style.display = "none";
+            iconChange.classList.remove("fa-chevron-up");
+            iconChange.classList.add("fa-chevron-down");
+            dropdownDiv.style.backgroundColor = "#f4f6fe";
+          } else {
+            dropdownContent.style.display = "flex";
+            iconChange.classList.remove("fa-chevron-down");
+            iconChange.classList.add("fa-chevron-up");
+            dropdownDiv.style.backgroundColor = "#c7ccdf";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
