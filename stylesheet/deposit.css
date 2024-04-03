@@ -31,8 +31,7 @@
 }
 
 .container .content .methods .method-panel,
-.container .content .make-payment .voucher-panel,
-.container .content .make-payment .credit-panel {
+.container .content .make-payment .panel {
   max-height: 0;
   overflow: hidden;
   padding: 0px 20px;
@@ -40,7 +39,7 @@
 }
 
 .container .content .methods p,
-.container .content .make-payment p {
+.container .content .make-payment .panel p {
   color: var(--navHover);
   font-weight: var(--fontWeight3);
   margin: 15px 0 5px 0px;
@@ -48,7 +47,8 @@
 }
 
 .container .content .methods .method-panel:last-child .row,
-.container .content .make-payment .voucher-panel button {
+.container .content .make-payment .panel .voucher-panel button,
+.container .content .make-payment .panel .credit-panel button {
   margin-bottom: 20px;
 }
 .container .content .methods .row {
