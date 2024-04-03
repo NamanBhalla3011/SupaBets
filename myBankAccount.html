@@ -3,26 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <style>
-      .submit-btn {
-        outline: none;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out 0s;
-        font-family: "poppins";
-        font-weight: 600;
-        border-radius: 5px;
-        background: #0ba3f7;
-        border: 1px solid transparent;
-        color: #fff;
-        display: inline-block;
-        font-size: 16px;
-        padding: 0px 25px;
-        height: 40px;
-        line-height: 40px;
-        margin-top: 20px;
-      }
-    </style>
+    <title>Deposit History</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -33,9 +14,9 @@
     <link rel="stylesheet" href="stylesheet/style.css" />
   </head>
   <body>
-    <div class="web-container">
+    <div class="container">
       <!-- Navigation -->
-      <div class="web-navbar">
+      <div class="navbar" id="navigations">
         <a href="index.html" class="">
           <i
             class="fa-solid fa-building-columns"
@@ -50,7 +31,7 @@
           ></i>
           Withdraw</a
         >
-        <div id="dropdown-div" style="border-radius: 5px">
+        <div id="dropdown-div">
           <button class="dropdown-btn">
             <i
               class="fa-solid fa-clock-rotate-left"
@@ -60,7 +41,7 @@
             <i class="fa-solid fa-chevron-down" id="icon-change"></i>
           </button>
           <div class="dropdown-container">
-            <a href="depositHistory.html">Deposit</a>
+            <a href="depositHistory.html" class="">Deposit</a>
             <a href="withdrawHistory.html">Withdraw</a>
           </div>
         </div>
@@ -74,9 +55,9 @@
       </div>
 
       <!-- Content -->
-      <div class="content" style="padding: 0 20px">
-        <h2 style="margin-top: 10px">Banking</h2>
-        <div class="methods" style="border: none; margin: 0; padding: 5px 0">
+      <div class="content">
+        <h2>Deposit History</h2>
+        <div class="data-found">
           <div
             class="bankRow"
             style="
@@ -291,16 +272,13 @@
               </select>
             </div>
           </div>
-          <button class="submit-btn">SUBMIT</button>
-        </div>
 
-        <div class="makePayment">
-          <h3 style="margin-bottom: 0px">Bank Accounts</h3>
+          <button style="margin-bottom: 20px;">SUBMIT</button>
 
-          <div class="banks">
+          <div class="transactions">
             <table style="border-spacing: 0px" class="history-table">
               <tr>
-                <th>Primary Account</th>
+                <th>Primary</th>
                 <th>Holder Name</th>
                 <th>Account Number</th>
                 <th>Bank</th>
@@ -309,19 +287,7 @@
               </tr>
               <tr>
                 <td>
-                  <input
-                    type="radio"
-                    id="primary"
-                    name="PrimaryBank"
-                    checked
-                    style="
-                      height: 12px;
-                      width: 12px;
-                      padding: 0;
-                      margin: 0;
-                      appearance: auto;
-                    "
-                  />
+                  <input type="radio" id="primary" name="PrimaryBank" checked />
                 </td>
                 <td>XYZ</td>
                 <td>1234567890</td>
@@ -330,25 +296,24 @@
                 <td><a href="">Delete</a></td>
               </tr>
               <tr>
-                <td><input
-                    type="radio"
-                    id="primary"
-                    name="PrimaryBank"
-                    style="
-                      height: 12px;
-                      width: 12px;
-                      padding: 0;
-                      margin: 0;
-                      appearance: auto;
-                    "
-                  /></td>
+                <td>
+                  <input type="radio" id="primary" name="PrimaryBank" checked />
+                </td>
                 <td>XYZ</td>
                 <td>1234567890</td>
                 <td>FNB-111</td>
                 <td>Saving</td>
+                <td><a href="">Delete</a></td>
+              </tr>
+              <tr>
                 <td>
-                  <a href="">Delete</a>
+                  <input type="radio" id="primary" name="PrimaryBank" checked />
                 </td>
+                <td>XYZ</td>
+                <td>1234567890</td>
+                <td>FNB-111</td>
+                <td>Saving</td>
+                <td><a href="">Delete</a></td>
               </tr>
             </table>
           </div>
@@ -359,6 +324,7 @@
       let dropdown = document.getElementsByClassName("dropdown-btn");
       let dropdownDiv = document.getElementById("dropdown-div");
       let i;
+      let navbar1 = document.getElementById("navigations");
       let iconChange = document.getElementById("icon-change");
       for (i = 0; i < dropdown.length; i++) {
         dropdown[i].addEventListener("click", function () {
@@ -368,11 +334,13 @@
             dropdownContent.style.display = "none";
             iconChange.classList.remove("fa-chevron-up");
             iconChange.classList.add("fa-chevron-down");
+            navbar1.classList.remove("openedDropdown");
             dropdownDiv.style.backgroundColor = "#f4f6fe";
           } else {
             dropdownContent.style.display = "flex";
             iconChange.classList.remove("fa-chevron-down");
             iconChange.classList.add("fa-chevron-up");
+            navbar1.classList.add("openedDropdown");
             dropdownDiv.style.backgroundColor = "#c7ccdf";
           }
         });

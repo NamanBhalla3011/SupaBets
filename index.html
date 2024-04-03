@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <title>Deposit</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="stylesheet/style.css" />
   </head>
   <body>
-    <div class="web-container">
+    <div class="container">
       <!-- Navigation -->
-      <div class="web-navbar">
-        <a href="index.html" class="active">  
+      <div class="navbar" id="navigations">
+        <a href="index.html" class="active">
           <i
             class="fa-solid fa-building-columns"
             style="font-size: 16px; margin-right: 16px"
@@ -31,7 +31,7 @@
           ></i>
           Withdraw</a
         >
-        <div id="dropdown-div" style="border-radius: 5px">
+        <div id="dropdown-div">
           <button class="dropdown-btn">
             <i
               class="fa-solid fa-clock-rotate-left"
@@ -56,149 +56,85 @@
 
       <!-- Content -->
       <div class="content">
-        <h2 style="margin-top: 10px">Deposit</h2>
+        <h2>Deposit</h2>
         <div class="methods">
-          <h3 style="margin-bottom: 0px">Select a Method</h3>
-          <div class="panel">
+          <button class="accordion">Select a Method</button>
+          <div class="method-panel">
             <!-- Vouchers -->
             <p>Vouchers</p>
             <div class="row">
               <div class="col">
-                <img
-                  src="images/BlueVoucher.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/BlueVoucher.png" alt="" />
               </div>
               <div class="col">
-                <img
-                  src="images/Flash.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/Flash.png" alt="" />
               </div>
               <div class="col">
-                <img
-                  src="images/Kazang.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/Kazang.png" alt="" />
               </div>
               <div class="col">
-                <img
-                  src="images/SupaBetsVoucher.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/SupaBetsVoucher.png" alt="" />
               </div>
               <div class="col">
-                <img
-                  src="images/OTTMobile.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/OTTMobile.png" alt="" />
               </div>
             </div>
             <!-- Instant EFT -->
             <p>Instant EFT</p>
             <div class="row">
               <div class="col">
-                <img
-                  src="images/ozow.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/ozow.png" alt="" />
               </div>
               <div class="col">
-                <img
-                  src="images/peach.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/peach.png" alt="" />
               </div>
               <div class="col">
-                <img
-                  src="images/wallet doc.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/wallet doc.png" alt="" />
               </div>
               <div class="col">
-                <img
-                  src="images/supa.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/supa.png" alt="" />
               </div>
               <div class="col">
-                <img
-                  src="images/pay.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/pay.png" alt="" />
               </div>
               <div class="col">
-                <img
-                  src="images/walletdoc.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/walletdoc.png" alt="" />
               </div>
               <div class="col">
-                <img
-                  src="images/secure.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/secure.png" alt="" />
               </div>
             </div>
             <!-- Cheque & Credit Cards -->
             <p>Cheque & Credit Cards</p>
             <div class="row">
               <div class="col">
-                <img
-                  src="images/payu.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/payu.png" alt="" />
               </div>
               <div class="col">
-                <img
-                  src="images/paygate.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/paygate.png" alt="" />
               </div>
             </div>
             <!-- Direct Deposit -->
             <p>Direct Deposit</p>
             <div class="row">
               <div class="col">
-                <img
-                  src="images/pay@.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/pay@.png" alt="" />
               </div>
               <div class="col">
-                <img
-                  src="images/direct.png"
-                  alt=""
-                  style="width: 100px; height: 50px"
-                />
+                <img src="images/direct.png" alt="" />
               </div>
             </div>
           </div>
         </div>
 
-        <div class="makePayment">
-          <h3 style="margin-bottom: 0px">Make Payment</h3>
-          <div class="voucher">
+        <div class="make-payment">
+          <button class="accordion">Make Payment</button>
+          <div class="voucher-panel">
             <p>Voucher Code</p>
             <input type="number" placeholder="Eg.123456789" required /><br />
             <button>REDEEM</button>
           </div>
-          <div class="banks">
+          <div class="credit-panel">
             <p>Play Credits</p>
             <p style="font-size: 9px; color: #aaa; margin: 0 0 -5px 0">
               Custom Amount
@@ -225,6 +161,7 @@
       let dropdown = document.getElementsByClassName("dropdown-btn");
       let dropdownDiv = document.getElementById("dropdown-div");
       let i;
+      let navbar1 = document.getElementById("navigations");
       let iconChange = document.getElementById("icon-change");
       for (i = 0; i < dropdown.length; i++) {
         dropdown[i].addEventListener("click", function () {
@@ -234,12 +171,29 @@
             dropdownContent.style.display = "none";
             iconChange.classList.remove("fa-chevron-up");
             iconChange.classList.add("fa-chevron-down");
+            navbar1.classList.remove("openedDropdown");
             dropdownDiv.style.backgroundColor = "#f4f6fe";
           } else {
             dropdownContent.style.display = "flex";
             iconChange.classList.remove("fa-chevron-down");
             iconChange.classList.add("fa-chevron-up");
+            navbar1.classList.add("openedDropdown");
             dropdownDiv.style.backgroundColor = "#c7ccdf";
+          }
+        });
+      }
+
+      var acc = document.getElementsByClassName("accordion");
+      var j;
+
+      for (j = 0; j < acc.length; j++) {
+        acc[j].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
           }
         });
       }

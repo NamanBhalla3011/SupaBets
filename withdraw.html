@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>withdrawal</title>
+    <title>Withdraw</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="stylesheet/style.css" />
   </head>
   <body>
-    <div class="web-container">
-       <!-- Navigation -->
-       <div class="web-navbar">
-        <a href="index.html" >
+    <div class="container">
+      <!-- Navigation -->
+      <div class="navbar" id="navigations">
+        <a href="index.html" class="">
           <i
             class="fa-solid fa-building-columns"
             style="font-size: 16px; margin-right: 16px"
@@ -31,7 +31,7 @@
           ></i>
           Withdraw</a
         >
-        <div id="dropdown-div" style="border-radius: 5px">
+        <div id="dropdown-div">
           <button class="dropdown-btn">
             <i
               class="fa-solid fa-clock-rotate-left"
@@ -45,7 +45,7 @@
             <a href="withdrawHistory.html">Withdraw</a>
           </div>
         </div>
-        <a href="#" class=""
+        <a href="myBankAccount.html" class=""
           ><i
             class="fa-solid fa-building-columns"
             style="font-size: 16px; margin-right: 16px"
@@ -55,10 +55,10 @@
       </div>
       <!-- Content -->
       <div class="content">
-        <h2 style="margin-top: 10px">Withdraw</h2>
+        <h2>Withdraw</h2>
         <div class="methods">
-          <h3 style="margin-bottom: 0px">Select Withdraw Method</h3>
-          <div class="panel">
+          <button class="accordion">Select a Method</button>
+          <div class="method-panel">
             <!-- Vouchers -->
             <p>Vouchers</p>
             <div class="row">
@@ -109,10 +109,10 @@
           </div>
         </div>
 
-        <div class="makePayment">
-          <h3 style="margin-bottom: 10px">Withdrawal Amount</h3>
-          <div class="voucher">
-            <input type="number" required /><br />
+        <div class="make-payment">
+          <button class="accordion">Withdrawal Amount</button>
+          <div class="voucher-panel">
+            <input type="number" placeholder="Eg.123456789" required /><br />
             <p style="color: #aaa; font-size: 14px">
               MIN: R5.00 - MAX: R1 000 000.00
             </p>
@@ -125,6 +125,7 @@
       let dropdown = document.getElementsByClassName("dropdown-btn");
       let dropdownDiv = document.getElementById("dropdown-div");
       let i;
+      let navbar1 = document.getElementById("navigations");
       let iconChange = document.getElementById("icon-change");
       for (i = 0; i < dropdown.length; i++) {
         dropdown[i].addEventListener("click", function () {
@@ -134,12 +135,29 @@
             dropdownContent.style.display = "none";
             iconChange.classList.remove("fa-chevron-up");
             iconChange.classList.add("fa-chevron-down");
+            navbar1.classList.remove("openedDropdown");
             dropdownDiv.style.backgroundColor = "#f4f6fe";
           } else {
             dropdownContent.style.display = "flex";
             iconChange.classList.remove("fa-chevron-down");
             iconChange.classList.add("fa-chevron-up");
+            navbar1.classList.add("openedDropdown");
             dropdownDiv.style.backgroundColor = "#c7ccdf";
+          }
+        });
+      }
+
+      var acc = document.getElementsByClassName("accordion");
+      var j;
+
+      for (j = 0; j < acc.length; j++) {
+        acc[j].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
           }
         });
       }

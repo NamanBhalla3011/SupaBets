@@ -1,0 +1,198 @@
+@import url(root.css);
+
+/* Content Tab */
+.container .content {
+  max-width: 960px;
+  width: 100%;
+  padding: 10px;
+}
+.container .content h2 {
+  margin-top: 10px;
+}
+.container .content .methods,
+.container .content .make-payment {
+  border: 2px solid var(--borderColor);
+  padding: 0px;
+  width: 100%;
+  max-width: 930px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.container .content .methods .accordion,
+.container .content .make-payment .accordion {
+  font-size: var(--subHeading);
+  font-weight: var(--fontWeight3);
+  background: none;
+  border: none;
+  height: 40px;
+  width: 100%;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.container .content .methods .method-panel,
+.container .content .make-payment .voucher-panel,
+.container .content .make-payment .credit-panel {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0px 20px;
+  transition: max-height 0.2s ease-out;
+}
+
+.container .content .methods p,
+.container .content .make-payment p {
+  color: var(--navHover);
+  font-weight: var(--fontWeight3);
+  margin: 15px 0 5px 0px;
+  font-size: var(--subHeading);
+}
+
+.container .content .methods .method-panel:last-child .row,
+.container .content .make-payment .voucher-panel button {
+  margin-bottom: 20px;
+}
+.container .content .methods .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container .content .methods .row .col {
+  max-width: 150px;
+  width: 100%;
+  height: 55px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 150px;
+  height: 55px;
+  box-shadow: var(--fontColor2) 0.8px 0.8px 3.3px;
+  margin: 0px 10px 5px 0;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out 0s;
+}
+.container .content .methods .row .col img {
+  width: 100px;
+  height: 50px;
+}
+
+.container .content .methods .row .col:hover {
+  border-color: var(--btnColor1);
+}
+
+/* Make Payment */
+/* Chrome, Safari, Edge, Opera */
+.container .content .make-payment input::-webkit-outer-spin-button,
+.container .content .make-payment input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* voucher-panel */
+.container .content .make-payment .voucher-panel input {
+  max-width: 352px;
+  width: 100%;
+  height: 42px;
+  outline: none;
+  border-radius: 5px;
+  background: transparent;
+  font-family: "poppins";
+  border: 1px solid var(--borderColor2);
+  color: var(--fontColor);
+  appearance: none;
+  padding: 0px 10px;
+}
+
+/* Credit-Panel */
+.container .content .make-payment .credit-panel input {
+  max-width: 85px;
+  width: 100%;
+  height: 36px;
+  outline: none;
+  border-radius: 5px;
+  background: transparent;
+  font-family: var(--fontFamily);
+  border: 1px solid var(--borderColor2);
+  color: var(--fontColor);
+  appearance: none;
+  padding: 0px 10px;
+  margin: 5px 10px 0 0;
+}
+.container .content .make-payment .credit-panel .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .content .make-payment .credit-panel .row .fixedAmount {
+  margin: 5px 10px 0 0;
+  font-weight: var(--fontWeight3);
+  width: 85px;
+  height: 36px;
+  text-align: center;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid var(--borderColor2);
+  color: var(--btnColor2);
+}
+.container .content .make-payment .credit-panel .row .fixedAmount.active {
+  background-color: var(--btnColor2);
+  border: 1px solid var(--btnColor2);
+  color: var(--fontColor3);
+}
+
+.voucher-panel button,
+.credit-panel button {
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out 0s;
+  font-family: var(--fontFamily);
+  font-weight: var(--fontWeight3);
+  border-radius: 5px;
+  margin: 10px 0px 0px;
+  background: var(--btnColor1);
+  border: 1px solid transparent;
+  color: var(--fontColor3);
+  width: var(--buttonWidth);
+  height: var(--buttonHeight);
+  display: inline-block;
+  font-size: var(--subHeading);
+  line-height: 40px;
+}
+.voucher-panel button:hover,
+.credit-panel button:hover {
+  background: var(--btnHover1);
+}
+
+@media screen and (max-width: 544px) {
+  .container .content h2 {
+    margin: 0;
+  }
+  .container .content .methods,
+  .container .content .make-payment {
+    margin-top: 10px;
+  }
+  .container .content .methods .accordion,
+  .container .content .make-payment .accordion {
+    padding: 0 10px;
+  }
+
+  .container .content .methods .method-panel,
+  .container .content .make-payment .voucher-panel,
+  .container .content .make-payment .credit-panel {
+    padding: 0px 10px;
+  }
+
+  .container .content .methods .method-panel:last-child .row,
+  .container .content .make-payment .voucher-panel button {
+    margin-bottom: 10px;
+  }
+  .container .content .methods .row .col {
+    max-width: 130px;
+    margin: 0px 15px 15px 0;
+  }
+}

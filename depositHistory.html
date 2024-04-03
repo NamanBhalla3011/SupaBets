@@ -12,38 +12,11 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="stylesheet/style.css" />
-    <style>
-      .content .methods {
-        padding: 0px;
-        border: none;
-      }
-      .content .makePayment {
-        text-align: center;
-      }
-      .content .contact-support {
-        background: #19406d;
-        margin-left: 10px;
-      }
-      .content .contact-support:hover {
-        background: #225895;
-      }
-
-      @media screen and (max-width: 451px){
-      
-      .content .contact-support {
-        background: #19406d;
-        margin-left: 0px;
-      }
-      .content .contact-support:hover {
-        background: #225895;
-      }
-      }
-    </style>
   </head>
   <body>
-    <div class="web-container">
+    <div class="container">
       <!-- Navigation -->
-      <div class="web-navbar">
+      <div class="navbar" id="navigations">
         <a href="index.html" class="">
           <i
             class="fa-solid fa-building-columns"
@@ -58,7 +31,7 @@
           ></i>
           Withdraw</a
         >
-        <div id="dropdown-div" style="border-radius: 5px">
+        <div id="dropdown-div">
           <button class="dropdown-btn">
             <i
               class="fa-solid fa-clock-rotate-left"
@@ -72,7 +45,7 @@
             <a href="withdrawHistory.html">Withdraw</a>
           </div>
         </div>
-        <a href="#" class=""
+        <a href="myBankAccount.html" class=""
           ><i
             class="fa-solid fa-building-columns"
             style="font-size: 16px; margin-right: 16px"
@@ -82,25 +55,91 @@
       </div>
       <!-- Content -->
       <div class="content">
-        <h2 style="margin-top: 10px">Deposit History</h2>
-        <div class="methods">
-          <img
-            src="images/Historyerror.png"
-            alt=""
-            width="100%"
-            style="border-radius: 5px"
-          />
-        </div>
-
-        <div class="makePayment">
-          <img src="images/exclamation.png" alt="" height="45px" />
-          <div class="voucher">
-            <p style="font-size: 15px;">Data not found</p>
-            
+        <h2>Deposit History</h2>
+        <!-- Transactions Not Found / Error -->
+        <div class="data-not-found">
+          <img src="images/Historyerror.png" alt="" />
+          <div class="not-found-row">
+            <img src="images/exclamation.png" alt="" height="45px" />
+            <p>Data not found</p>
             <button>TRY AGAIN</button>
-            <button class="contact-support">CONTACT SUPPORT</button>
+            <a href="mailto:email@email.de" class="contact-support"
+              >CONTACT SUPPORT</a
+            >
           </div>
-         
+        </div>
+        <!-- Transactions Found-->
+        <div class="data-found">
+          <p>Transaction reference</p>
+          <input type="text" /><br />
+          <button>VIEW REPORT</button>
+          <button class="download-btn">DOWNLOAD PDF</button>
+          <a href="mailto:email@email.de" class="contact-support"
+            >CONTACT SUPPORT</a
+          >
+          <p class="total-amount">
+            Total Records :
+            <span style="color: var(--color5); text-align: right"> 2</span>
+            <br />
+            Total Value :
+            <span style="color: var(--color5); text-align: center"> R1234</span>
+          </p>
+          <div class="transactions">
+            <table style="border-spacing: 0px" class="history-table">
+              <tr>
+                <th>Date</th>
+                <th>Transaction Reference</th>
+                <th>Payment Method</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+              <tr>
+                <td>12/03/2024</td>
+                <td>1234567890</td>
+                <td>voucher</td>
+                <td>R10000</td>
+                <td>Successful</td>
+              </tr>
+              <tr>
+                <td>12/03/2024</td>
+                <td>1234567890</td>
+                <td>Direct Deposit</td>
+                <td>R10000</td>
+                <td><a href="#">Unsuccessful</a></td>
+              </tr>
+              <tr>
+                <td>12/03/2024</td>
+                <td>1234567890</td>
+                <td>voucher</td>
+                <td>R10000</td>
+                <td>Successful</td>
+              </tr>
+              <tr>
+                <td>12/03/2024</td>
+                <td>1234567890</td>
+                <td>voucher</td>
+                <td>R10000</td>
+                <td>Successful</td>
+              </tr>
+              <tr>
+                <td>12/03/2024</td>
+                <td>1234567890</td>
+                <td>voucher</td>
+                <td>R10000</td>
+                <td><a href="#">Unsuccessful</a></td>
+              </tr>
+            </table>
+          </div>
+          <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a class="active" href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+          </div>
         </div>
       </div>
     </div>
@@ -108,6 +147,7 @@
       let dropdown = document.getElementsByClassName("dropdown-btn");
       let dropdownDiv = document.getElementById("dropdown-div");
       let i;
+      let navbar1 = document.getElementById("navigations");
       let iconChange = document.getElementById("icon-change");
       for (i = 0; i < dropdown.length; i++) {
         dropdown[i].addEventListener("click", function () {
@@ -117,11 +157,13 @@
             dropdownContent.style.display = "none";
             iconChange.classList.remove("fa-chevron-up");
             iconChange.classList.add("fa-chevron-down");
+            navbar1.classList.remove("openedDropdown");
             dropdownDiv.style.backgroundColor = "#f4f6fe";
           } else {
             dropdownContent.style.display = "flex";
             iconChange.classList.remove("fa-chevron-down");
             iconChange.classList.add("fa-chevron-up");
+            navbar1.classList.add("openedDropdown");
             dropdownDiv.style.backgroundColor = "#c7ccdf";
           }
         });

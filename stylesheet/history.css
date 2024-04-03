@@ -1,0 +1,214 @@
+@import url(root.css);
+
+.container .content .data-not-found .not-found-row,
+.container .content .data-found {
+  border: 2px solid var(--borderColor);
+  padding: 20px;
+  width: 100%;
+  max-width: 930px;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.container .content .data-not-found .not-found-row > button,
+.container .content .data-not-found .not-found-row > a,
+.container .content .data-found > button,
+.container .content .data-found > a {
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out 0s;
+  font-family: var(--fontFamily);
+  font-weight: var(--fontWeight3);
+  border-radius: 5px;
+  margin: 10px 0px 0px;
+  background: var(--btnColor1);
+  border: 1px solid transparent;
+  color: var(--fontColor3);
+  width: var(--buttonWidth);
+  height: var(--buttonHeight);
+  display: inline-block;
+  font-size: var(--subHeading);
+  line-height: 40px;
+}
+.container .content .data-not-found .not-found-row > button:hover,
+.container .content .data-found > button:hover {
+  background: var(--btnHover1);
+}
+.container .content .data-not-found .not-found-row > a:hover,
+.container .content .data-found > a:hover{
+  background: var(--btnHover2);
+}
+
+.container .content .data-not-found .not-found-row > .contact-support,
+.container .content .data-found > .contact-support {
+  background: var(--btnColor2);
+  margin-left: 10px;
+}
+
+/* Data Not Found */
+.container .content .data-not-found > img {
+  border-radius: 5px;
+  width: 100%;
+  padding-top: 20px;
+}
+.container .content .data-not-found .not-found-row > p {
+  color: var(--navHover);
+  font-weight: var(--fontWeight3);
+  margin: 15px 0 5px 0px;
+  font-size: var(--subHeading);
+}
+
+/* Data Found */
+.container .content .data-found {
+  text-align: left;
+}
+
+.container .content .data-found > p {
+  color: var(--navHover);
+  font-weight: var(--fontWeight3);
+  margin: 0 0 15px 0px;
+}
+.container .content .data-found > input {
+  max-width: 352px;
+  width: 100%;
+  height: 42px;
+  outline: none;
+  border-radius: 5px;
+  background: transparent;
+  font-family: var(--fontFamily);
+  border: 1px solid var(--borderColor2);
+  color: var(--fontColor);
+  appearance: none;
+  padding: 0px 10px;
+}
+
+.container .content .data-found > .download-btn {
+  margin-left: 10px;
+}
+
+.container .content .data-found .total-amount {
+  color: var(--navHover);
+  font-weight: var(--fontWeight3);
+  margin: 15px 0px;
+  font-size: var(--MainHeading2);
+}
+.container .content .data-found .transactions {
+  overflow: auto;
+  border-radius: 15px 15px 0 0;
+}
+.container .content .data-found .transactions .history-table {
+  width: 100%;
+}
+.container .content .data-found .transactions .history-table th {
+  background-color: var(--btnColor2);
+  color: var(--fontColor3);
+}
+.container
+  .content
+  .data-found
+  .transactions
+  .history-table
+  tr:nth-child(odd)
+  td {
+  background-color: aliceblue;
+}
+
+.container .content .data-found .transactions .history-table th,
+.container .content .data-found .transactions .history-table tr,
+.container .content .data-found .transactions .history-table tr td {
+  text-align: center;
+  border-bottom: 1px solid var(--btnColor2);
+  border-collapse: collapse;
+  margin: 0;
+  padding: 10px 25px;
+  font-size: 15px;
+  width: max-content;
+}
+
+.container .content .data-found .transactions .history-table tr td:last-child {
+  color: var(--successColor);
+}
+.container
+  .content
+  .data-found
+  .transactions
+  .history-table
+  tr
+  td
+  a:last-child {
+  color: var(--failColor);
+}
+
+/* Pagination */
+.container .content .data-found .pagination {
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.container .content .data-found .pagination a {
+  color: var(--fontColor);
+  padding: 4px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: var(--textSmall);
+}
+
+.container .content .data-found .pagination a.active {
+  background-color: var(--btnColor2);
+  color: var(--fontColor3);
+}
+.container .content .data-found .pagination a:hover:not(.active) {
+  background-color: var(--btnColor1);
+  color: var(--fontColor3);
+}
+
+@media screen and (max-width: 544px) {
+  .container .content .data-not-found .not-found-row > .contact-support,
+  .container .content .data-found > .contact-support {
+    margin-left: 0px;
+  }
+
+  /* Data Not Found */
+
+  .container .content .data-not-found > img {
+    padding-top: 10px;
+  }
+  .container .content .data-not-found .not-found-row > p {
+    margin: 10px 0 5px 0px;
+  }
+
+  /* Data Found */
+  .container .content .data-found {
+    text-align: left;
+    padding: 10px;
+  }
+
+  .container .content .data-found > p {
+    margin: 0 0 15px 0px;
+  }
+
+  .container .content .data-found > .download-btn {
+    margin-left: 0px;
+  }
+
+  .container .content .data-found .total-amount {
+    font-size: 18px;
+  }
+  /* Table */
+  .container .content .data-found .transactions {
+    border-radius: 10px;
+  }
+  .container .content .data-found .transactions .history-table {
+    border-radius: 10px;
+  }
+  .container .content .data-found .transactions .history-table th,
+  .container .content .data-found .transactions .history-table tr,
+  .container .content .data-found .transactions .history-table tr td {
+    padding: 15px 15px;
+    font-size: var(--textSmall);
+  }
+}
